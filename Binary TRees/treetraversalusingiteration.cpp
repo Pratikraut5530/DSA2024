@@ -56,6 +56,32 @@ vector<int> inordertraversal(node* root){
     return inorder;
 }
 
+vector<int> postorderTraversal(node* root){
+    vector<int> postorder;
+    if(root==NULL){
+        return postorder;
+    }
+    stack<node*> st1,st2;
+    st1.push(root);
+
+    while(!st1.empty()){
+        root = st1.top();
+        st1.pop();
+        st2.push(root);
+        if(root->left != NULL){
+            st1.push(root->left);
+        }
+        if(root->right){
+            st1.push(root->right);
+        }
+    }
+    while(!st2.empty()){
+        postorder.push_back(st2.top()->data);
+        st2.pop();
+    }
+    return postorder;
+}
+
 void display(vector<int> &ans){
     int n = ans.size();
     for(int i=0;i<n;i++){
