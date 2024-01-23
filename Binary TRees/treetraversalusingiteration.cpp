@@ -56,6 +56,9 @@ vector<int> inordertraversal(node* root){
     return inorder;
 }
 
+
+
+
 vector<int> postorderTraversal(node* root){
     vector<int> postorder;
     if(root==NULL){
