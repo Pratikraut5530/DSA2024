@@ -52,8 +52,8 @@ int diameter(node* root){
         return 0;
     }
 
-    int option1 = height(root->left);
-    int option2 = height(root->right);
+    int option1 = diameter(root->left);
+    int option2 = diameter(root->right);
     int option3 = height(root->left) + height(root->right)+1;
 
     int ans = max(option1,max(option2,option3));
