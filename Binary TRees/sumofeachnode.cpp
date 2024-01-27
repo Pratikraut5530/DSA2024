@@ -27,6 +27,7 @@ pair<bool,int> isSumTreeFast(node* root){
         return p;
     }
 
+    //code for
     pair<bool,int> leftAns = isSumTreeFast(root->left);
     pair<bool,int> rightAns = isSumTreeFast(root->right);
 
