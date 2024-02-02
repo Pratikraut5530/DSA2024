@@ -9,6 +9,7 @@ class Hero{
     public:
     char *name;
     char level;
+    static int timeToComplete;
 
     Hero(){
         cout<<"Simple Constructor called"<<endl;
@@ -57,6 +58,10 @@ class Hero{
         strcpy(this->name,name);
     }
 
+    static int random(){
+        cout<<"Time to Complete is : "<<timeToComplete<<endl;
+    }
+
     void print(){
         cout<<endl;
         cout <<"Name : "<<this->name<<endl;
@@ -70,33 +75,42 @@ class Hero{
     }
 };
 
+int Hero::timeToComplete=5;
+
 int main()
 {
-    Hero hero1;
-    hero1.setHealth(12);
-    hero1.setLevel('D');
-    char name[7] = "Babbar";
-    hero1.setName(name);
-    hero1.print();
 
-    //use default copy constructor
-    Hero hero2(hero1);
-    hero2.print();
 
-    hero1.name[0] = 'G';
-    hero1.print();
+    Hero::random();
 
-    hero2.print();
+    // cout<<"time required to complete the game is : "<<Hero::timeToComplete<<endl;
+
+
+    // Hero hero1;
+    // hero1.setHealth(12);
+    // hero1.setLevel('D');
+    // char name[7] = "Babbar";
+    // hero1.setName(name);
+    // hero1.print();
+
+    // //use default copy constructor
+    // Hero hero2(hero1);
+    // hero2.print();
+
+    // hero1.name[0] = 'G';
+    // hero1.print();
+
+    // hero2.print();
     
-    //assignment operator
-    hero1 = hero2;
+    // //assignment operator
+    // hero1 = hero2;
 
-    hero1.print();
-    hero2.print();  
+    // hero1.print();
+    // hero2.print();  
 
-    Hero *b  = new Hero();
+    // Hero *b  = new Hero();
 
-    delete b;
+    // delete b;
 
     // Hero suresh(70,'C');
     // suresh.print();
