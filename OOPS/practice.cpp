@@ -32,7 +32,7 @@ class Hero{
     void setName(char name[]){
         strcpy(this->name,name);
     }
-
+    
     // Hero(Hero& temp){
     //     cout<<"Copy constructor called"<<endl;
     //     this->height = temp.height;
@@ -56,7 +56,7 @@ class Hero{
         cout<<"Weight is : "<<this->weight<<endl;
         cout<<"Name is : " <<this->name<<endl;
         cout<<endl;
-    }
+    } 
 
     ~Hero(){
         cout<<"Destructor called"<<endl;
