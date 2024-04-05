@@ -2,7 +2,7 @@
 using namespace std;
 //inheritance and polymorphism
 //function overriding - run time polymorphism
-
+//function overloading - compile time polymorphism
 class Animal{
     public:
     void speaking(){
