@@ -63,6 +63,5 @@ int main()
     Animal a1;
     a1.printid(h1);
 
-
     return 0;
 }

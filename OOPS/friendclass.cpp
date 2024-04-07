@@ -9,6 +9,7 @@ class Hero{
 
 class Helper{
     public:
+    //argument is passed as copy constructor thing so that it can access the members of base class
     void print(Hero &t){
         cout<<t.height<<endl;
     }
