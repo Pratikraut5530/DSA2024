@@ -54,6 +54,10 @@ void Animal::print(){
 
 };
 
+struct Hero{
+    int weight=70;
+};
+
 
 int main()
 {
@@ -70,6 +74,9 @@ int main()
 
     cout<<"Addition of two numbers is : "<<a1.add(5,4)<<endl;
     cout<<"Addition of two numbers is : "<<d1.add(5,4,5)<<endl;
+
+    Hero h1;
+    cout<<"Weight of Hero is " <<h1.weight<<endl;
 
     return 0;
 }

@@ -19,6 +19,7 @@ class Villan:public Hero{
 int main()
 {   
     Villan v1;  
+    
     Hero * h1 = &v1; //pointer to the object of the derived class
 
     h1->print();
