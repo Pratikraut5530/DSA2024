@@ -1,9 +1,9 @@
 #include<iostream>
 #include<string.h>
 using namespace std;
-//inheritance - single,multilevel,multiple,hybrid
-//polymorphism - runtime polymorphism : function overriding
-//comiple time polymorphism - 1.function overloading 2.operator overloading
+//inheritance -- single,mulitple,multilevel,hubrid
+//polymorphism -- 1.runtime polymorphism (function overriding)
+//2.compile time polymorphism --  1.function overloading,2.operator overloading
 
 class Animal{
     public:
@@ -35,20 +35,20 @@ class Cat:public Animal{
 
 class Math{
     public:
-    int num1;
-    public:
-    void add(int a,int b){
-        cout<<"Addition of Two NUmbers is : "<<a+b<<endl;
+    int value;
+
+    int add(int a,int b){
+        cout<<"Addition of two numbers is : "<<a+b<<endl;
     }
 
-    void add(int a,int b,int c){
-        cout<<"Addition of Three Number is : "<<a+b+c<<endl;
+    int add(int a,int b,int c){
+        cout<<"Addition of three numbers is : "<<a+b+c<<endl;
     }
 
-    void operator+(Math& temp){
-        int value1 = temp.num1;
-        int value2 = this->num1;
-        cout<<"Substraction of Two Numbers is : "<<value2-value1<<endl;
+    void operator+(Math &temp){
+        int value1 = temp.value;
+        int value2 = this->value;
+        cout<<"Substraction of two Numbers is : "<<value2-value1<<endl;
     }
 };
 
@@ -65,15 +65,16 @@ class Hero{
         name = new char[100];
     }
 
-    // Hero(Hero& temp){
+    // Hero(Hero &temp){
     //     cout<<"Copy Constructor Called"<<endl;
 
+    //     this->name = temp.name;
     //     this->height = temp.height;
     //     this->weight = temp.weight;
-    //     this->name = temp.name;
+
     // }
 
-    Hero(Hero& temp){
+    Hero(Hero &temp){
         cout<<"Copy Constructor Called"<<endl;
 
         char* ch = new char[strlen(temp.name)+1];
@@ -82,6 +83,11 @@ class Hero{
         this->height = temp.height;
         this->weight = temp.weight;
         this->name = ch;
+
+    }
+
+    void setName(char name[]){
+        strcpy(this->name,name);
     }
 
     void setHeight(int height){
@@ -92,12 +98,8 @@ class Hero{
         this->weight = weight;
     }
 
-    void setName(char name[]){
-        strcpy(this->name,name);
-    }
-
     void print(){
-        cout<<"[ "<<this->name<<" "<<this->height<<" "<<this->weight<<" ]"<<endl;
+        cout<<"[ "<<this->name<<" "<<this->weight<<" "<<this->height<<" ]"<<endl;
     }
 };
 
@@ -112,19 +114,21 @@ int main()
 
     // GermanShepherd gs1;
     // gs1.speaking();
+
+    // gs1.Dog::speaking();
     // gs1.Animal::speaking();
 
     // Cat c1;
     // c1.speaking();
 
-    Math m1,m2;
-    m1.add(5,7);
-    m1.add(5,7,3);
+    // Math m1,m2;
+    // m1.add(5,3);
+    // m1.add(5,3,2);
 
-    m1.num1 = 200;
-    m2.num1 = 100;
+    // m1.value = 200;
+    // m2.value = 100;
 
-    m1 + m2;
+    // m1 + m2; //m1--main class(this->value) m2--> refrenced class(temp.value)
 
     Hero h1;
     h1.setHeight(150);
